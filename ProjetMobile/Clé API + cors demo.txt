@@ -1,0 +1,2 @@
+clé api web steam pour projet flutter : B7ABBB155FF3A1AE5A0EFB9D78A7FCDE
+https://cors-anywhere.herokuapp.com/corsdemo
