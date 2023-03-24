@@ -35,14 +35,9 @@ class _InscriptionPageState extends State<InscriptionPage> {
     return loading ? Loading() :
       Scaffold(
       backgroundColor: Color.fromARGB(250, 30, 38, 44),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            /*
-            SvgPicture.asset(
-              'images/back.svg',
-            ),
-            */
             Container(
               margin: const EdgeInsets.symmetric(
                 vertical: 50,
@@ -50,6 +45,7 @@ class _InscriptionPageState extends State<InscriptionPage> {
               ),
               child: Column(
                 children: const [
+                  SizedBox(height: 100),
                   Text(
                     "Inscription",
                     style: TextStyle(

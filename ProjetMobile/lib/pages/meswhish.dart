@@ -85,7 +85,8 @@ class GameDetails {
   });
 }
 Future<GameDetails> fetchDetails(int appId) async {
-  final response = await http.get(Uri.parse('https://cors-anywhere.herokuapp.com/https://store.steampowered.com/api/appdetails?appids=$appId&cc=FR&l=fr'));
+  final response = await http.get(Uri.parse(//'https://cors-anywhere.herokuapp.com/'
+      'https://store.steampowered.com/api/appdetails?appids=$appId&cc=FR&l=fr'));
 
   if (response.statusCode == 200) {
     final Map<String, dynamic> gameData = jsonDecode(response.body)['$appId']['data'];

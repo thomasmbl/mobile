@@ -13,6 +13,7 @@ import 'pages/connexion_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
+    name: "FlutterProjet",
     options: const FirebaseOptions(
         apiKey: "AIzaSyDYZCRZnfGoDArLrb5QSmmyYP6BuyvHwzU",
         appId: "1:678017101922:web:a1a3f2792c862be951a13b",

@@ -129,7 +129,8 @@ class GameDetails {
 }
 
 Future<GameDetails> fetchDetails(int appId) async {
-  final response = await http.get(Uri.parse('https://cors-anywhere.herokuapp.com/https://store.steampowered.com/api/appdetails?appids=$appId&cc=FR&l=fr'));
+  final response = await http.get(Uri.parse(//'https://cors-anywhere.herokuapp.com/'
+      'https://store.steampowered.com/api/appdetails?appids=$appId&cc=FR&l=fr'));
 
   if (response.statusCode == 200) {
     final Map<String, dynamic> gameData = jsonDecode(response.body)['$appId']['data'];
@@ -162,7 +163,7 @@ class _SearchPageState extends State<SearchPage> {
 
   bool loading = true;
 
-  final String url = "https://cors-anywhere.herokuapp.com/"
+  final String url = //"https://cors-anywhere.herokuapp.com/"
       "https://api.steampowered.com/ISteamApps/GetAppList/v2/"
       "?key=B7ABBB155FF3A1AE5A0EFB9D78A7FCDE";
 
@@ -183,8 +184,9 @@ class _SearchPageState extends State<SearchPage> {
       throw Exception('Erreur de chargement des jeux');
     }
   }
+
   Future<void> fetchGameDetails(int appId) async {
-    final response = await http.get(Uri.parse('https://cors-anywhere.herokuapp.com/'
+    final response = await http.get(Uri.parse(//'https://cors-anywhere.herokuapp.com/'
         'https://store.steampowered.com/api/appdetails?appids=$appId'
         '&cc=FR&l=fr&key=B7ABBB155FF3A1AE5A0EFB9D78A7FCDE'));
     if (response.statusCode == 200) {

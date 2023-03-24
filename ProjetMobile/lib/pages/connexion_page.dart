@@ -28,42 +28,27 @@ class _ConnexionPageState extends State<ConnexionPage> {
     super.dispose();
   }
 
-  /*
-  void toggleView() {
-    setState(() {
-      emailController.text = '';
-      passwordController.text = '';
-    });
-  }*/
 
   @override
   Widget build(BuildContext context) {
     return loading ? Loading() :
     Scaffold(
       backgroundColor: Color.fromARGB(250, 30, 38, 44),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              /*
-              * decoration: const BoxDecoration(
-                image:DecorationImage (
-                  image: AssetImage("background.jpeg")
-                )
-              ),
-              * */
-
               margin: const EdgeInsets.symmetric(
                 vertical: 20,
-                horizontal: 140,
+                horizontal: 125,
               ),
               child: Column(
                 children: const [
-                  SizedBox(height: 30),
+                  SizedBox(height: 100),
                   Text("Bienvenue !",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 40,
+                      fontSize: 30,
                       color: Colors.white,
                     ),),
                   SizedBox(height: 20),
@@ -85,7 +70,6 @@ class _ConnexionPageState extends State<ConnexionPage> {
               child: Form(
                 key: _formKey,
                 child: Column(
-                  //mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     TextFormField(
@@ -207,5 +191,4 @@ class _ConnexionPageState extends State<ConnexionPage> {
       ),
     );
   }
-
 }

@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
+import 'package:testfluttr1/pages/reviews.dart';
 import '../models/user.dart';
+import 'loading.dart';
 
 
 class Details extends StatefulWidget {
@@ -20,7 +22,7 @@ class _DetailsState extends State<Details> {
   bool isLiked = false;
   bool isWished = false;
   bool isDesc = true;
-  late Map<String, dynamic> _mpGame = {};
+  Map<String, dynamic>? _mpGame;
 
 
   Future<void> checkIfLiked() async {
@@ -86,7 +88,8 @@ class _DetailsState extends State<Details> {
 
   Future<void> fetchGameDetails(int appId) async {
     final response = await http.get(Uri.parse(
-        'https://cors-anywhere.herokuapp.com/https://store.steampowered.com/api/appdetails?appids=$appId'
+        //'https://cors-anywhere.herokuapp.com/'
+            'https://store.steampowered.com/api/appdetails?appids=$appId'
             '&cc=FR&l=fr&key=B7ABBB155FF3A1AE5A0EFB9D78A7FCDE'));
 
     if (response.statusCode == 200) {
@@ -106,7 +109,7 @@ class _DetailsState extends State<Details> {
     final user = Provider.of<AppUser?>(context);
     checkIfLiked();
     checkIfWished();
-    return Scaffold(
+    return _mpGame == null ? Loading() :  Scaffold(
       backgroundColor: Color.fromARGB(250, 30, 38, 44),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(250, 30, 38, 44),
@@ -177,7 +180,7 @@ class _DetailsState extends State<Details> {
           children: [
             // Image en arrière-plan
             Image.network(
-              _mpGame['screenshots'][1]['path_full'],
+              _mpGame!['screenshots'][1]['path_full'],
               fit: BoxFit.cover,
               width: double.infinity,
               height: 270,
@@ -209,15 +212,15 @@ class _DetailsState extends State<Details> {
                       ],
                     ),
                     title: Text(
-                        _mpGame != null ? _mpGame['name'] : '',
+                        _mpGame != null ? _mpGame!['name'] : '',
                         style: TextStyle(color: Colors.white)
                     ),
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                            _mpGame != null && _mpGame['publishers'] != null ?
-                            '${_mpGame['publishers']}'
+                            _mpGame != null && _mpGame!['publishers'] != null ?
+                            '${_mpGame!['publishers']}'
                                 : '',
                             style: TextStyle(color: Colors.white)
                         ),
@@ -233,7 +236,7 @@ class _DetailsState extends State<Details> {
                     children: [
                       SizedBox(
                         height: 50,
-                        width: 240,
+                        width: 180,
                         child: ElevatedButton(
                           onPressed: () {
                             setState(() {
@@ -255,7 +258,7 @@ class _DetailsState extends State<Details> {
                       ),
                       SizedBox(
                         height: 50,
-                        width: 240,
+                        width: 180,
                         child: ElevatedButton(
                           onPressed: () {
                             setState(() {
@@ -285,8 +288,8 @@ class _DetailsState extends State<Details> {
                     Column(
                       children: [
                         Text(
-                            _mpGame != null && _mpGame['short_description'] != null ?
-                            '${_mpGame['short_description']}'
+                            _mpGame != null && _mpGame!['short_description'] != null ?
+                            '${_mpGame!['short_description']}'
                                 : 'Aucune description disponible',
                             style: TextStyle(
                                 color: Colors.white,
@@ -295,17 +298,7 @@ class _DetailsState extends State<Details> {
                         ),
                       ],
                     ) :
-                  Column(
-                    children: [
-                      Text(
-                          'BONUS AVIS',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                          )
-                      ),
-                    ],
-                  ),
+                  GameReviews(appID: widget.appID),
                 )
               ],
             ),

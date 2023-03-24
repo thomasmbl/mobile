@@ -7,7 +7,6 @@ class MotDePasseOublie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //return const Placeholder();
     return Scaffold(
       backgroundColor: Color.fromARGB(250, 30, 38, 44),
       body: Center(
@@ -19,7 +18,6 @@ class MotDePasseOublie extends StatelessWidget {
                 horizontal: 50,
               ),
               child: Column(
-                //crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
                   Text(
                     "Mot de passe oublié",
@@ -61,11 +59,9 @@ class MotDePasseOublie extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: const [
                   TextField(
-                    //onChanged: (value) => setState(() => _email = value ),
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
-                      //labelText: 'E-mail',
                       border: InputBorder.none,
                       filled: true,
                       fillColor: Color.fromARGB(255, 30, 38, 44),
