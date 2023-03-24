@@ -1,9 +1,7 @@
 # Projet Mobile Flutter
 LEPEU Marion - HOFF Tom - MABILLE Thomas
 
-# /!\ IMPORTANT /!\
-Il se peut qu'au démarrage du projet, les requêtes vers l'API Web Steam n'aboutissent pas. Pour pallier à ce problème, il faut demander une démo CORS via ce lien : https://cors-anywhere.herokuapp.com/corsdemo et simplement cliquer sur 'Request temporary access to the demo server'. Cela devrait débloquer les accès et permettre d'afficher les informations.
-
+# Objectif
 Ce projet a pour but de nous faire développer une application mobile en Flutter permettant à un utilisateur d'indiquer quels sont ses jeux vidéo favoris à travers l'API de Steam. Les informations de chaque utilisateur (nom d'utilisateur, e-mail, mot de passe, likes, wishlist) sont stockées sur Firebase et Firestore. Nous effectuons des requêtes vers ces bases pour récupérer les informations de connexion et les listes de jeux souhaités et likés. Pour les listes likes/wishlist, nous stockons les steam_appid des jeux afin de pouvoir afficher leurs détails via une requête vers l'API Steam de détails des jeux.
 
 # Screenshot de firebase
