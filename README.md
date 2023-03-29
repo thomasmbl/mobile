@@ -1,7 +1,8 @@
 # Projet Mobile Flutter
 LEPEU Marion - HOFF Tom - MABILLE Thomas
 
-# Lien vers la démo : https://drive.google.com/drive/folders/1lsWLJKM--pYh2t1dCBuZERVSN322jgVB?usp=sharing
+# Lien vers la démo : 
+https://drive.google.com/drive/folders/1lsWLJKM--pYh2t1dCBuZERVSN322jgVB?usp=sharing
 
 # Objectif
 Ce projet a pour but de nous faire développer une application mobile en Flutter permettant à un utilisateur d'indiquer quels sont ses jeux vidéo favoris à travers l'API de Steam. Les informations de chaque utilisateur (nom d'utilisateur, e-mail, mot de passe, likes, wishlist) sont stockées sur Firebase et Firestore. Nous effectuons des requêtes vers ces bases pour récupérer les informations de connexion et les listes de jeux souhaités et likés. Pour les listes likes/wishlist, nous stockons les steam_appid des jeux afin de pouvoir afficher leurs détails et leurs Avis via une requête vers l'API Steam de détails et avis des jeux.
