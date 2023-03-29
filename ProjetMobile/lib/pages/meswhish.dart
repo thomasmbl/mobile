@@ -145,7 +145,7 @@ class _MesWishState extends State<MesWish> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SvgPicture.asset(
-                    'images/empty_wishlist.svg',
+                    'images/empty_whishlist.svg',
                   ),
                   const SizedBox(height: 40),
                   const Text(
@@ -158,7 +158,7 @@ class _MesWishState extends State<MesWish> {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    "Cliquez sur l'étoile' pour en rajouter",
+                    "Cliquez sur l'étoile pour en rajouter",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 14,

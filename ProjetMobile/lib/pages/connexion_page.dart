@@ -40,7 +40,7 @@ class _ConnexionPageState extends State<ConnexionPage> {
             Container(
               margin: const EdgeInsets.symmetric(
                 vertical: 20,
-                horizontal: 125,
+                horizontal: 90,
               ),
               child: Column(
                 children: const [
@@ -65,7 +65,7 @@ class _ConnexionPageState extends State<ConnexionPage> {
             const SizedBox(height: 10),
             Container(
               margin: const EdgeInsets.symmetric(
-                horizontal: 100,
+                horizontal: 30,
               ),
               child: Form(
                 key: _formKey,
@@ -81,7 +81,7 @@ class _ConnexionPageState extends State<ConnexionPage> {
                           //labelText: 'E-mail',
                           border: InputBorder.none,
                           filled: true,
-                          fillColor: Color.fromARGB(255, 30, 38, 44),
+                          fillColor: Color.fromARGB(255, 33, 42 ,48),
                           hintText: "E-mail",
                           hintStyle: TextStyle(
                             color: Colors.white,
@@ -98,7 +98,7 @@ class _ConnexionPageState extends State<ConnexionPage> {
                       decoration: const InputDecoration(
                           border: InputBorder.none,
                           filled: true,
-                          fillColor: Color.fromARGB(255, 30, 38, 44),
+                          fillColor: Color.fromARGB(255, 33, 42 ,48),
                           hintText: 'Mot de passe',
                           hintStyle: TextStyle(
                             color: Colors.white,
@@ -116,7 +116,7 @@ class _ConnexionPageState extends State<ConnexionPage> {
                 TextButton (
                   style: (
                       TextButton.styleFrom(
-                        fixedSize: const Size.fromWidth(300),
+                        fixedSize: const Size.fromWidth(350),
                         foregroundColor: Colors.white,
                         backgroundColor: const Color.fromARGB(255, 99, 106, 246),
                         elevation: 0,
@@ -146,17 +146,16 @@ class _ConnexionPageState extends State<ConnexionPage> {
                     }
                   },
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 5),
                 Text(
                   error,
                   style: const TextStyle(color: Colors.red, fontSize: 15.0),
                 ),
-                SizedBox(height: 15),
                 TextButton (
                   style: (
                     TextButton.styleFrom(
                       foregroundColor: Colors.white,
-                      fixedSize: const Size.fromWidth(300),
+                      fixedSize: const Size.fromWidth(350),
                       shape: const RoundedRectangleBorder(side: BorderSide(
                         color: Color.fromARGB(255, 99, 106, 246),
                         width: 1,
@@ -168,7 +167,7 @@ class _ConnexionPageState extends State<ConnexionPage> {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => InscriptionPage(),));
                   },
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 100),
                 TextButton (
                   style: (
                       TextButton.styleFrom(
